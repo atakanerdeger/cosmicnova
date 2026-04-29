@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CosmicNova — Terms of Service</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#020010;--card:rgba(255,255,255,0.03);--border:#1a1a3a;
+    --primary:#c9b8ff;--accent:#6633ff;--text:#e0d8ff;
+    --muted:#554488;--dim:#332255;
+  }
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7;min-height:100vh}
+  .stars{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .star{position:absolute;background:#fff;border-radius:50%}
+  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  header{text-align:center;margin-bottom:56px}
+  .logo{font-size:32px;margin-bottom:12px;filter:drop-shadow(0 0 16px rgba(102,51,255,0.5))}
+  .app-name{font-size:22px;font-weight:700;letter-spacing:3px;color:var(--primary);margin-bottom:4px}
+  .doc-type{font-size:12px;color:var(--dim);letter-spacing:2px;margin-bottom:16px}
+  .meta{display:inline-flex;gap:16px;font-size:12px;color:var(--muted);background:var(--card);border:1px solid var(--border);border-radius:20px;padding:6px 16px}
+  nav{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:40px}
+  nav h3{font-size:11px;color:var(--dim);letter-spacing:1.5px;margin-bottom:12px}
+  nav ol{padding-left:16px;display:flex;flex-direction:column;gap:6px}
+  nav ol li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+  nav ol li a:hover{color:var(--primary)}
+  section{margin-bottom:40px}
+  h2{font-size:16px;font-weight:700;color:var(--primary);letter-spacing:.5px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+  h2 .num{width:24px;height:24px;border-radius:7px;background:rgba(102,51,255,0.2);border:1px solid rgba(102,51,255,0.3);display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:var(--accent);flex-shrink:0}
+  h3{font-size:14px;font-weight:600;color:var(--text);margin:18px 0 8px}
+  p{font-size:14px;color:#bbb;margin-bottom:12px}
+  ul,ol{padding-left:20px;margin-bottom:12px}
+  li{font-size:14px;color:#bbb;margin-bottom:6px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .card-title{font-size:13px;font-weight:600;color:var(--primary);margin-bottom:6px}
+  .card p{margin-bottom:0;font-size:13px}
+  .highlight{background:rgba(102,51,255,0.08);border:1px solid rgba(102,51,255,0.25);border-radius:12px;padding:16px 20px;margin-bottom:16px}
+  .highlight p{color:#c9b8ff;margin-bottom:0;font-size:13px}
+  .warn{background:rgba(255,150,50,0.06);border:1px solid rgba(255,150,50,0.2);border-radius:12px;padding:16px 20px;margin-bottom:16px}
+  .warn p{color:#ffbb77;margin-bottom:0;font-size:13px}
+  .contact-box{background:linear-gradient(135deg,rgba(102,51,255,0.1),rgba(201,184,255,0.05));border:1px solid rgba(102,51,255,0.3);border-radius:14px;padding:24px;text-align:center;margin-top:40px}
+  .contact-box p{color:var(--muted);font-size:13px;margin-bottom:8px}
+  .contact-box a{color:var(--primary);text-decoration:none;font-weight:600}
+  footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border)}
+  footer p{font-size:12px;color:var(--dim)}
+  .switcher{display:flex;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:4px;margin-bottom:40px}
+  .switcher a{flex:1;text-align:center;padding:10px;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);transition:all .2s}
+  .switcher a.active{background:rgba(102,51,255,0.2);color:var(--primary);border:1px solid rgba(102,51,255,0.3)}
+  @media(max-width:600px){.wrap{padding:28px 16px 60px}h2{font-size:14px}}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="wrap">
+
+  <header>
+    <div class="logo">🌌</div>
+    <div class="app-name">✦ COSMICNOVA ✦</div>
+    <div class="doc-type">TERMS OF SERVICE</div>
+    <div class="meta">
+      <span>Effective: January 1, 2025</span>
+      <span>·</span>
+      <span>Last updated: April 2025</span>
+    </div>
+  </header>
+
+  <div class="switcher">
+    <a href="privacy.html">🔒 Privacy Policy</a>
+    <a href="terms.html" class="active">📄 Terms of Service</a>
+  </div>
+
+  <nav>
+    <h3>TABLE OF CONTENTS</h3>
+    <ol>
+      <li><a href="#t1">Acceptance of Terms</a></li>
+      <li><a href="#t2">Description of Service</a></li>
+      <li><a href="#t3">Account Registration</a></li>
+      <li><a href="#t4">Subscriptions & Billing</a></li>
+      <li><a href="#t5">Free Tier & Premium Features</a></li>
+      <li><a href="#t6">Acceptable Use</a></li>
+      <li><a href="#t7">Disclaimer of Warranties</a></li>
+      <li><a href="#t8">Limitation of Liability</a></li>
+      <li><a href="#t9">Intellectual Property</a></li>
+      <li><a href="#t10">Termination</a></li>
+      <li><a href="#t11">Governing Law</a></li>
+      <li><a href="#t12">Contact</a></li>
+    </ol>
+  </nav>
+
+  <div class="highlight">
+    <p>✦ Please read these Terms of Service carefully before using CosmicNova. By accessing or using the app, you agree to be bound by these terms. If you do not agree, please do not use the app.</p>
+  </div>
+
+  <!-- 1 -->
+  <section id="t1">
+    <h2><span class="num">1</span> Acceptance of Terms</h2>
+    <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and CosmicNova ("we," "us," or "our") governing your access to and use of the CosmicNova mobile application and related services (collectively, the "Service").</p>
+    <p>By creating an account or using any part of the Service, you confirm that you are at least 13 years of age (or 16 in the EU/EEA), have read and understood these Terms, and agree to be bound by them and our Privacy Policy.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="t2">
+    <h2><span class="num">2</span> Description of Service</h2>
+    <p>CosmicNova is an AI-powered astrology and spiritual guidance application that provides:</p>
+    <ul>
+      <li>Personalized birth chart (natal chart) analysis</li>
+      <li>Daily cosmic card readings based on your birth profile</li>
+      <li>Planetary transit and astrology analyses</li>
+      <li>Numerology, Celtic astrology, and Chinese zodiac readings</li>
+      <li>Healing crystal recommendations and karma analyses</li>
+      <li>A 3D interactive solar system visualization</li>
+      <li>Personal reading archive</li>
+    </ul>
+    <div class="warn">
+      <p>⚠️ Astrological and spiritual content provided by CosmicNova is for entertainment, self-reflection, and personal exploration purposes only. It does not constitute medical, psychological, financial, or legal advice. Do not make important life decisions based solely on content provided by this app.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="t3">
+    <h2><span class="num">3</span> Account Registration</h2>
+    <h3>Creating an Account</h3>
+    <p>You must create an account to use CosmicNova. You may register using your email address, Apple ID, or Google account. You agree to provide accurate and complete information during registration and to keep this information up to date.</p>
+
+    <h3>Account Security</h3>
+    <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Notify us immediately at support@cosmicnova.app if you suspect unauthorized access to your account.</p>
+
+    <h3>One Account Per User</h3>
+    <p>Each user may maintain only one active account. Creating multiple accounts to circumvent subscription limitations is prohibited and may result in account termination.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="t4">
+    <h2><span class="num">4</span> Subscriptions & Billing</h2>
+
+    <h3>Subscription Plans</h3>
+    <div class="card">
+      <div class="card-title">Monthly Plan — $5.99/month</div>
+      <p>Billed monthly. Automatically renews unless cancelled at least 24 hours before the end of the current period.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Annual Plan — $39.99/year</div>
+      <p>Billed annually ($3.33/month). Automatically renews unless cancelled at least 24 hours before the end of the current period. Represents approximately 44% savings compared to the monthly plan.</p>
+    </div>
+
+    <h3>Billing & Payment</h3>
+    <p>All subscriptions are processed through the Apple App Store. Your Apple ID account will be charged upon confirmation of purchase. Payment terms are governed by Apple's Terms of Sale.</p>
+
+    <h3>Auto-Renewal</h3>
+    <p>Subscriptions automatically renew at the end of each billing period. To avoid being charged, you must cancel your subscription at least 24 hours before the renewal date through your Apple ID account settings.</p>
+
+    <h3>Cancellation</h3>
+    <p>You may cancel your subscription at any time through Settings → Apple ID → Subscriptions on your iOS device. Cancellation takes effect at the end of the current billing period. No partial refunds are provided for unused time.</p>
+
+    <h3>Refunds</h3>
+    <p>All purchases are processed through the Apple App Store. Refund requests must be submitted directly to Apple at <a href="https://reportaproblem.apple.com" style="color:#c9b8ff">reportaproblem.apple.com</a>. CosmicNova does not process refunds directly.</p>
+
+    <h3>Price Changes</h3>
+    <p>We reserve the right to modify subscription prices. You will be notified of any price changes before they take effect, and continued use after the change constitutes acceptance of the new price.</p>
+  </section>
+
+  <!-- 5 -->
+  <section id="t5">
+    <h2><span class="num">5</span> Free Tier & Premium Features</h2>
+
+    <h3>Free Tier</h3>
+    <p>All users, including non-subscribers, have access to the Daily Cosmic Card — a personalized daily reading based on your birth profile. This feature refreshes every 24 hours.</p>
+
+    <h3>Premium Features</h3>
+    <p>The following features are available exclusively to active Premium subscribers:</p>
+    <ul>
+      <li>All 18 AI-powered astrological analyses (planetary transits, natal chart, numerology, healing crystals, karma analysis, past lives, Orion/Pleiades/Sirius channels, and more)</li>
+      <li>Unlimited reading archive access</li>
+      <li>Full annual forecast and retrograde predictions</li>
+      <li>Advanced birth chart with Celtic, Chinese, and Tarot systems</li>
+    </ul>
+    <p>Premium access is tied to your account. It cannot be transferred, shared, or used on accounts other than the purchasing account.</p>
+  </section>
+
+  <!-- 6 -->
+  <section id="t6">
+    <h2><span class="num">6</span> Acceptable Use</h2>
+    <p>You agree not to use CosmicNova to:</p>
+    <ul>
+      <li>Violate any applicable law or regulation</li>
+      <li>Attempt to reverse engineer, decompile, or disassemble any part of the app</li>
+      <li>Use automated scripts or bots to access the Service</li>
+      <li>Share, resell, or sublicense your account or premium access</li>
+      <li>Attempt to circumvent subscription requirements through technical means</li>
+      <li>Upload harmful, offensive, or illegal content</li>
+      <li>Interfere with or disrupt the integrity of the Service</li>
+    </ul>
+    <p>Violation of these terms may result in immediate account suspension or termination without refund.</p>
+  </section>
+
+  <!-- 7 -->
+  <section id="t7">
+    <h2><span class="num">7</span> Disclaimer of Warranties</h2>
+    <div class="warn">
+      <p>⚠️ CosmicNova is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the Service will be uninterrupted, error-free, or completely secure. Astrological content is provided for entertainment and personal exploration only and does not constitute professional advice of any kind.</p>
+    </div>
+    <p>We make no representations about the accuracy, completeness, or reliability of any astrological, numerological, or spiritual content generated by the app, including AI-generated readings.</p>
+  </section>
+
+  <!-- 8 -->
+  <section id="t8">
+    <h2><span class="num">8</span> Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, CosmicNova and its creators shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or goodwill, arising from your use of or inability to use the Service.</p>
+    <p>In no event shall our total liability to you exceed the amount you paid for the Service in the 12 months preceding the claim.</p>
+  </section>
+
+  <!-- 9 -->
+  <section id="t9">
+    <h2><span class="num">9</span> Intellectual Property</h2>
+    <p>All content, features, functionality, design, graphics, and code within CosmicNova — including but not limited to the 3D solar system visualization, analysis frameworks, and app interface — are owned by CosmicNova and protected by intellectual property laws.</p>
+    <p>You are granted a limited, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes in accordance with these Terms.</p>
+    <p>AI-generated readings produced for your account are for your personal use only and may not be reproduced, distributed, or commercially exploited without written permission.</p>
+  </section>
+
+  <!-- 10 -->
+  <section id="t10">
+    <h2><span class="num">10</span> Termination</h2>
+    <h3>By You</h3>
+    <p>You may terminate your account at any time by contacting us at support@cosmicnova.app or using the delete account option in the app. Termination does not entitle you to a refund of any prepaid subscription fees.</p>
+
+    <h3>By Us</h3>
+    <p>We reserve the right to suspend or terminate your account at our discretion if you violate these Terms, engage in fraudulent activity, or if we are required to do so by law. We will provide reasonable notice where possible.</p>
+
+    <h3>Effect of Termination</h3>
+    <p>Upon termination, your right to use the Service ceases immediately. Your personal data will be deleted within 30 days in accordance with our Privacy Policy.</p>
+  </section>
+
+  <!-- 11 -->
+  <section id="t11">
+    <h2><span class="num">11</span> Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the Service shall be resolved through binding arbitration, except where prohibited by law.</p>
+    <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+  </section>
+
+  <!-- 12 -->
+  <section id="t12">
+    <h2><span class="num">12</span> Contact</h2>
+    <div class="contact-box">
+      <p>Questions about these Terms?</p>
+      <a href="mailto:support@cosmicnova.app">support@cosmicnova.app</a>
+      <p style="margin-top:12px">We respond to all inquiries within 72 hours.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 CosmicNova. All rights reserved.</p>
+    <p style="margin-top:6px">
+      <a href="privacy.html" style="color:var(--dim);text-decoration:none;margin:0 8px">Privacy Policy</a>
+      <a href="terms.html" style="color:var(--dim);text-decoration:none;margin:0 8px">Terms of Service</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+const sc=document.getElementById('stars')
+for(let i=0;i<80;i++){
+  const s=document.createElement('div')
+  s.className='star'
+  const sz=Math.random()*1.5+0.3
+  s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:${Math.random()*0.4+0.05}`
+  sc.appendChild(s)
+}
+</script>
+</body>
+</html>

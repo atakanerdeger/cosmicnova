@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CosmicNova — AI Birth Chart & Astrology</title>
+<meta name="description" content="CosmicNova is an AI-powered astrology app offering personalized birth charts, natal maps, planetary transit readings, and cosmic guidance.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020010;--card:rgba(255,255,255,0.03);--border:#1a1a3a;
+  --primary:#c9b8ff;--accent:#6633ff;--text:#e0d8ff;
+  --muted:#554488;--dim:#332255;
+}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* Stars */
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;background:#fff;border-radius:50%}
+
+/* Glow blobs */
+.blob{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
+.blob1{width:400px;height:400px;background:rgba(102,51,255,0.12);top:-100px;left:-100px}
+.blob2{width:300px;height:300px;background:rgba(201,184,255,0.06);bottom:0;right:-80px}
+
+.wrap{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.nav-logo{display:flex;align-items:center;gap:8px}
+.nav-logo-icon{font-size:20px}
+.nav-logo-text{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--primary)}
+.nav-links{display:flex;gap:6px}
+.nav-link{font-size:12px;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid transparent;transition:all .2s}
+.nav-link:hover{color:var(--primary);border-color:var(--border);background:var(--card)}
+
+/* Hero */
+.hero{text-align:center;padding:64px 0 56px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);background:var(--card);border:1px solid var(--border);border-radius:20px;padding:5px 14px;margin-bottom:24px;letter-spacing:1px}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:#c9b8ff;animation:pulse 2s ease-in-out infinite}
+.hero-icon{font-size:64px;margin-bottom:20px;display:block;filter:drop-shadow(0 0 32px rgba(102,51,255,0.5))}
+.hero-title{font-size:42px;font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:8px}
+.hero-title span{background:linear-gradient(135deg,#c9b8ff,#6633ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16px;color:var(--muted);margin-bottom:32px;line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#6633ff,#9966ff);color:#fff;font-size:14px;font-weight:700;padding:13px 28px;border-radius:14px;text-decoration:none;box-shadow:0 0 32px rgba(102,51,255,0.35);transition:transform .2s,box-shadow .2s}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(102,51,255,0.5)}
+.hero-cta-note{font-size:12px;color:var(--dim);margin-top:10px}
+
+/* Store badges */
+.store-row{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.store-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid #1a1a3a;border-radius:12px;padding:10px 18px;text-decoration:none;transition:all .2s}
+.store-badge:hover{background:rgba(255,255,255,0.09);border-color:#2a2a5a}
+.store-badge-icon{font-size:20px}
+.store-badge-txt{display:flex;flex-direction:column}
+.store-badge-top{font-size:9px;color:var(--muted);letter-spacing:.5px}
+.store-badge-bottom{font-size:13px;color:var(--text);font-weight:600}
+
+/* Features */
+.section-label{text-align:center;font-size:11px;color:var(--dim);letter-spacing:2px;margin-bottom:12px}
+.section-title{text-align:center;font-size:26px;font-weight:700;color:var(--text);margin-bottom:8px}
+.section-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto}
+
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:64px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;transition:border-color .2s}
+.feat:hover{border-color:rgba(201,184,255,0.2)}
+.feat-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.feat-title{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:6px}
+.feat-desc{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* Legal section */
+.legal-section{margin-bottom:64px}
+.legal-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.legal-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 24px;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:10px}
+.legal-card:hover{border-color:rgba(102,51,255,0.4);background:rgba(102,51,255,0.06);transform:translateY(-3px)}
+.legal-card-icon{font-size:28px}
+.legal-card-title{font-size:16px;font-weight:700;color:var(--primary)}
+.legal-card-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.legal-card-arrow{font-size:12px;color:var(--dim);margin-top:auto}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:64px;max-width:500px;margin-left:auto;margin-right:auto}
+.plan{border-radius:18px;padding:24px 20px;position:relative}
+.plan-free{background:var(--card);border:1px solid var(--border)}
+.plan-premium{background:rgba(102,51,255,0.1);border:2px solid rgba(102,51,255,0.4)}
+.plan-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#6633ff,#9966ff);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:20px;white-space:nowrap;letter-spacing:.5px}
+.plan-type{font-size:10px;color:var(--dim);letter-spacing:1.5px;margin-bottom:6px}
+.plan-price{font-size:28px;font-weight:800;color:var(--text);line-height:1}
+.plan-per{font-size:11px;color:var(--muted);margin-top:3px;margin-bottom:12px}
+.plan-features{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
+.plan-features li{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.plan-features li::before{content:"✦";color:#6633ff;font-size:9px;flex-shrink:0}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:32px 0;text-align:center}
+.footer-logo{font-size:14px;font-weight:700;letter-spacing:2px;color:var(--primary);margin-bottom:8px}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:16px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:var(--dim);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--primary)}
+.footer-copy{font-size:11px;color:var(--dim)}
+
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-icon{animation:float 4s ease-in-out infinite}
+
+@media(max-width:600px){
+  .hero-title{font-size:28px}
+  .legal-cards{grid-template-columns:1fr}
+  .pricing{grid-template-columns:1fr}
+  .plan-badge{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<div class="wrap">
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-logo">
+      <span class="nav-logo-icon">🌌</span>
+      <span class="nav-logo-text">COSMICNOVA</span>
+    </div>
+    <div class="nav-links">
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="terms.html" class="nav-link">Terms</a>
+      <a href="mailto:support@cosmicnova.app" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge"><span></span> Available on iOS</div>
+    <span class="hero-icon">🪐</span>
+    <h1 class="hero-title">Your Cosmic Map,<br/><span>Decoded by AI</span></h1>
+    <p class="hero-sub">Personalized birth charts, planetary transits, healing crystals, and karmic insights — all powered by AI and real-time astronomical data.</p>
+    <div class="store-row">
+      <a href="#" class="store-badge">
+        <span class="store-badge-icon"></span>
+        <span class="store-badge-txt">
+          <span class="store-badge-top">DOWNLOAD ON THE</span>
+          <span class="store-badge-bottom">App Store</span>
+        </span>
+      </a>
+    </div>
+    <div class="hero-cta-note">Free to download · Daily card included</div>
+  </div>
+
+  <!-- Features -->
+  <div style="margin-bottom:64px">
+    <div class="section-label">✦ WHAT'S INSIDE ✦</div>
+    <div class="section-title">18 Cosmic Analyses</div>
+    <div class="section-sub">From ancient traditions to real-time planetary data — all in one app.</div>
+    <div class="features">
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(255,110,180,0.15)">♀</div>
+        <div class="feat-title">Planetary Transits</div>
+        <div class="feat-desc">Venus, Mars, Mercury, Jupiter, Saturn & Neptune — live positions analyzed for you.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(167,139,250,0.15)">🌌</div>
+        <div class="feat-title">Birth Chart & Natal Map</div>
+        <div class="feat-desc">Full natal chart analysis covering Sun, Moon, Rising sign and all major planetary positions.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(125,211,252,0.15)">💎</div>
+        <div class="feat-title">Healing Crystal Match</div>
+        <div class="feat-desc">Personalized crystal recommendations based on your birth chart and current energy.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(253,164,175,0.15)">☯</div>
+        <div class="feat-title">Karma & Past Lives</div>
+        <div class="feat-desc">Explore your karmic patterns and past life echoes through planetary node analysis.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(147,197,253,0.15)">⭐</div>
+        <div class="feat-title">Star Channels</div>
+        <div class="feat-desc">Orion, Pleiades & Sirius frequency readings for higher consciousness guidance.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(255,215,125,0.15)">🔢</div>
+        <div class="feat-title">Numerology</div>
+        <div class="feat-desc">Life path number, name numerology, Tarot birth card and Celtic tree — all calculated.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Scene mention -->
+  <div style="background:linear-gradient(135deg,rgba(102,51,255,0.1),rgba(201,184,255,0.04));border:1px solid rgba(102,51,255,0.25);border-radius:20px;padding:32px;text-align:center;margin-bottom:64px">
+    <div style="font-size:36px;margin-bottom:12px">🌍 🪐 ✦</div>
+    <div style="font-size:18px;font-weight:700;color:var(--primary);margin-bottom:8px">Live 3D Solar System</div>
+    <div style="font-size:13px;color:var(--muted);max-width:400px;margin:0 auto;line-height:1.7">Explore an interactive 3D solar system with real-time planetary positions. Rotate, zoom, and watch 23 constellations come alive — all in your pocket.</div>
+  </div>
+
+  <!-- Pricing -->
+  <div style="margin-bottom:64px">
+    <div class="section-label">✦ PRICING ✦</div>
+    <div class="section-title">Simple & Transparent</div>
+    <div class="section-sub">Start free. Upgrade when you're ready.</div>
+    <div class="pricing">
+      <div class="plan plan-free">
+        <div class="plan-type">FREE FOREVER</div>
+        <div class="plan-price">$0</div>
+        <div class="plan-per">always free</div>
+        <ul class="plan-features">
+          <li>Daily Cosmic Card</li>
+          <li>Personal birth profile</li>
+          <li>3D solar system</li>
+        </ul>
+      </div>
+      <div class="plan plan-premium">
+        <div class="plan-badge">✦ MOST POPULAR</div>
+        <div class="plan-type" style="color:#9966ff">PREMIUM</div>
+        <div class="plan-price" style="color:#c9b8ff">$3.33</div>
+        <div class="plan-per" style="color:#6644aa">/ month, billed $39.99/yr</div>
+        <ul class="plan-features">
+          <li>All 18 analyses</li>
+          <li>Full natal chart</li>
+          <li>Unlimited archive</li>
+          <li>Annual forecasts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal -->
+  <div class="legal-section">
+    <div class="section-label">✦ LEGAL ✦</div>
+    <div class="section-title">Transparency First</div>
+    <div class="section-sub">We believe in clear, honest policies. Read how we handle your data.</div>
+    <div class="legal-cards">
+      <a href="privacy.html" class="legal-card">
+        <div class="legal-card-icon">🔒</div>
+        <div class="legal-card-title">Privacy Policy</div>
+        <div class="legal-card-desc">How we collect, use, and protect your personal data — including birth profile information and account details.</div>
+        <div class="legal-card-arrow">Read Privacy Policy →</div>
+      </a>
+      <a href="terms.html" class="legal-card">
+        <div class="legal-card-icon">📄</div>
+        <div class="legal-card-title">Terms of Service</div>
+        <div class="legal-card-desc">The rules and guidelines governing your use of CosmicNova, subscription terms, and your rights as a user.</div>
+        <div class="legal-card-arrow">Read Terms of Service →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">✦ COSMICNOVA ✦</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:support@cosmicnova.app">support@cosmicnova.app</a>
+    </div>
+    <div class="footer-copy">© 2025 CosmicNova. All rights reserved. · AI Birth Chart & Astrology</div>
+  </footer>
+
+</div>
+
+<script>
+const sc=document.getElementById('stars')
+for(let i=0;i<100;i++){
+  const s=document.createElement('div')
+  s.className='star'
+  const sz=Math.random()*1.6+0.3
+  s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:${Math.random()*0.45+0.05}`
+  sc.appendChild(s)
+}
+</script>
+</body>
+</html>

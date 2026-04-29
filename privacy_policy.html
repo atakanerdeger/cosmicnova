@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CosmicNova — Privacy Policy</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#020010;
+    --card:rgba(255,255,255,0.03);
+    --border:#1a1a3a;
+    --primary:#c9b8ff;
+    --accent:#6633ff;
+    --text:#e0d8ff;
+    --muted:#554488;
+    --dim:#332255;
+  }
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7;min-height:100vh}
+
+  /* Stars */
+  .stars{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .star{position:absolute;background:#fff;border-radius:50%}
+
+  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:48px 24px 80px}
+
+  /* Header */
+  header{text-align:center;margin-bottom:56px}
+  .logo{font-size:32px;margin-bottom:12px;filter:drop-shadow(0 0 16px rgba(102,51,255,0.5))}
+  .app-name{font-size:22px;font-weight:700;letter-spacing:3px;color:var(--primary);margin-bottom:4px}
+  .doc-type{font-size:12px;color:var(--dim);letter-spacing:2px;margin-bottom:16px}
+  .meta{display:inline-flex;gap:16px;font-size:12px;color:var(--muted);background:var(--card);border:1px solid var(--border);border-radius:20px;padding:6px 16px}
+
+  /* Nav */
+  nav{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:40px}
+  nav h3{font-size:11px;color:var(--dim);letter-spacing:1.5px;margin-bottom:12px}
+  nav ol{padding-left:16px;display:flex;flex-direction:column;gap:6px}
+  nav ol li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+  nav ol li a:hover{color:var(--primary)}
+
+  /* Sections */
+  section{margin-bottom:40px}
+  h2{font-size:16px;font-weight:700;color:var(--primary);letter-spacing:.5px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+  h2 .num{width:24px;height:24px;border-radius:7px;background:rgba(102,51,255,0.2);border:1px solid rgba(102,51,255,0.3);display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:var(--accent);flex-shrink:0}
+  h3{font-size:14px;font-weight:600;color:var(--text);margin:18px 0 8px}
+  p{font-size:14px;color:#bbb;margin-bottom:12px}
+  ul,ol{padding-left:20px;margin-bottom:12px}
+  li{font-size:14px;color:#bbb;margin-bottom:6px}
+
+  /* Cards */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .card-title{font-size:13px;font-weight:600;color:var(--primary);margin-bottom:6px}
+  .card p{margin-bottom:0;font-size:13px}
+
+  /* Highlight box */
+  .highlight{background:rgba(102,51,255,0.08);border:1px solid rgba(102,51,255,0.25);border-radius:12px;padding:16px 20px;margin-bottom:16px}
+  .highlight p{color:#c9b8ff;margin-bottom:0;font-size:13px}
+
+  /* Table */
+  .table-wrap{overflow-x:auto;margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;color:var(--primary);font-size:11px;letter-spacing:1px;padding:8px 12px;border-bottom:1px solid var(--border)}
+  td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);color:#bbb;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+
+  /* Tag */
+  .tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:600;margin-left:6px}
+  .tag-req{background:rgba(255,100,100,0.15);color:#ff8888;border:1px solid rgba(255,100,100,0.2)}
+  .tag-opt{background:rgba(100,255,150,0.1);color:#7fff9e;border:1px solid rgba(100,255,150,0.2)}
+
+  /* Contact */
+  .contact-box{background:linear-gradient(135deg,rgba(102,51,255,0.1),rgba(201,184,255,0.05));border:1px solid rgba(102,51,255,0.3);border-radius:14px;padding:24px;text-align:center;margin-top:40px}
+  .contact-box p{color:var(--muted);font-size:13px;margin-bottom:8px}
+  .contact-box a{color:var(--primary);text-decoration:none;font-weight:600}
+
+  /* Footer */
+  footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border)}
+  footer p{font-size:12px;color:var(--dim)}
+
+  /* Tab switcher */
+  .switcher{display:flex;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:4px;margin-bottom:40px}
+  .switcher a{flex:1;text-align:center;padding:10px;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);transition:all .2s}
+  .switcher a.active{background:rgba(102,51,255,0.2);color:var(--primary);border:1px solid rgba(102,51,255,0.3)}
+
+  @media(max-width:600px){
+    .wrap{padding:28px 16px 60px}
+    h2{font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="wrap">
+
+  <header>
+    <div class="logo">🌌</div>
+    <div class="app-name">✦ COSMICNOVA ✦</div>
+    <div class="doc-type">PRIVACY POLICY</div>
+    <div class="meta">
+      <span>Effective: January 1, 2025</span>
+      <span>·</span>
+      <span>Last updated: April 2025</span>
+    </div>
+  </header>
+
+  <!-- Tab switcher -->
+  <div class="switcher">
+    <a href="privacy.html" class="active">🔒 Privacy Policy</a>
+    <a href="terms.html">📄 Terms of Service</a>
+  </div>
+
+  <!-- TOC -->
+  <nav>
+    <h3>TABLE OF CONTENTS</h3>
+    <ol>
+      <li><a href="#s1">Information We Collect</a></li>
+      <li><a href="#s2">How We Use Your Information</a></li>
+      <li><a href="#s3">Third-Party Services</a></li>
+      <li><a href="#s4">Data Storage & Security</a></li>
+      <li><a href="#s5">Your Rights & Choices</a></li>
+      <li><a href="#s6">Children's Privacy</a></li>
+      <li><a href="#s7">Changes to This Policy</a></li>
+      <li><a href="#s8">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <div class="highlight">
+    <p>🔮 CosmicNova is committed to protecting your privacy. We collect only what's necessary to provide personalized astrological insights. We never sell your personal data to third parties.</p>
+  </div>
+
+  <!-- 1 -->
+  <section id="s1">
+    <h2><span class="num">1</span> Information We Collect</h2>
+
+    <h3>Information You Provide Directly <span class="tag tag-req">Required</span></h3>
+    <div class="card">
+      <div class="card-title">Account Information</div>
+      <p>Email address, display name, and authentication credentials when you create an account via email, Apple Sign-In, or Google Sign-In.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Birth Profile Data</div>
+      <p>Date of birth, time of birth, place of birth, gender identity, rising sign, moon sign, and life intention — collected during onboarding to generate your personalized cosmic profile.</p>
+    </div>
+
+    <h3>Information Collected Automatically</h3>
+    <div class="card">
+      <div class="card-title">Usage Data</div>
+      <p>App interactions, features used, analysis history, session duration, and crash reports. This data helps us improve the app experience.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Device Information</div>
+      <p>Device model, operating system version, unique device identifiers, and time zone. Used for app performance and compatibility.</p>
+    </div>
+
+    <h3>Payment Information <span class="tag tag-opt">Processed externally</span></h3>
+    <div class="card">
+      <div class="card-title">Subscription Data</div>
+      <p>CosmicNova does not store your payment card details. All subscription transactions are processed securely by Apple App Store. We only receive confirmation of your subscription status via RevenueCat.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <h2><span class="num">2</span> How We Use Your Information</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Purpose</th><th>Data Used</th><th>Legal Basis</th></tr>
+        <tr><td>Generate personalized astrological analyses and birth chart readings</td><td>Birth date, time, place, rising sign, moon sign</td><td>Contract performance</td></tr>
+        <tr><td>Authenticate your account and maintain session security</td><td>Email, authentication tokens</td><td>Contract performance</td></tr>
+        <tr><td>Process and verify premium subscriptions</td><td>User ID, subscription status</td><td>Contract performance</td></tr>
+        <tr><td>Deliver daily cosmic card notifications</td><td>Birth profile, device token</td><td>Legitimate interest</td></tr>
+        <tr><td>Sync your reading archive across devices</td><td>Analysis history, user ID</td><td>Contract performance</td></tr>
+        <tr><td>Improve app performance and fix bugs</td><td>Usage data, crash reports</td><td>Legitimate interest</td></tr>
+        <tr><td>Comply with legal obligations</td><td>Account information</td><td>Legal obligation</td></tr>
+      </table>
+    </div>
+    <p>We do not use your birth profile data for advertising, profiling, or any purpose beyond providing the astrological services you have requested.</p>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <h2><span class="num">3</span> Third-Party Services</h2>
+    <p>CosmicNova integrates the following third-party services. Each operates under its own privacy policy:</p>
+
+    <div class="card">
+      <div class="card-title">Firebase (Google LLC)</div>
+      <p>Used for user authentication and cloud data storage. Your profile data is stored in Firebase Firestore with strict security rules ensuring only you can access your data. <a href="https://firebase.google.com/support/privacy" style="color:#c9b8ff">Firebase Privacy Policy →</a></p>
+    </div>
+    <div class="card">
+      <div class="card-title">RevenueCat, Inc.</div>
+      <p>Used to manage and verify in-app subscriptions. RevenueCat receives your anonymized user ID and subscription status. No payment card details are shared with RevenueCat. <a href="https://www.revenuecat.com/privacy" style="color:#c9b8ff">RevenueCat Privacy Policy →</a></p>
+    </div>
+    <div class="card">
+      <div class="card-title">Anthropic (Claude AI)</div>
+      <p>Your birth profile and selected analysis category are sent to Anthropic's API to generate personalized astrological readings. Prompts may be used by Anthropic to improve safety and model quality per their usage policies. <a href="https://www.anthropic.com/privacy" style="color:#c9b8ff">Anthropic Privacy Policy →</a></p>
+    </div>
+    <div class="card">
+      <div class="card-title">Apple App Store</div>
+      <p>Handles all payment processing for subscriptions. Apple's payment infrastructure is governed by Apple's privacy policy and terms. <a href="https://www.apple.com/legal/privacy/" style="color:#c9b8ff">Apple Privacy Policy →</a></p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <h2><span class="num">4</span> Data Storage & Security</h2>
+    <h3>Where Your Data is Stored</h3>
+    <p>Your account and profile data is stored on Google Firebase servers located in the United States. Local device storage (AsyncStorage) is also used to cache your reading archive and daily cards for offline access.</p>
+
+    <h3>How We Protect Your Data</h3>
+    <ul>
+      <li>All data transmitted between the app and our servers is encrypted using TLS/SSL</li>
+      <li>Firebase Security Rules ensure each user can only access their own data</li>
+      <li>Authentication tokens are stored securely using platform-native secure storage</li>
+      <li>We do not store payment card numbers or financial information</li>
+      <li>Access to production data is strictly limited to authorized personnel</li>
+    </ul>
+
+    <h3>Data Retention</h3>
+    <p>We retain your data for as long as your account is active. If you delete your account, your personal data is permanently removed from our systems within 30 days. Anonymized, aggregated analytics data may be retained for up to 24 months.</p>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <h2><span class="num">5</span> Your Rights & Choices</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+
+    <div class="card"><div class="card-title">✦ Access</div><p>Request a copy of all personal data we hold about you.</p></div>
+    <div class="card"><div class="card-title">✦ Correction</div><p>Update or correct your birth profile and account information at any time through the app's Profile section.</p></div>
+    <div class="card"><div class="card-title">✦ Deletion</div><p>Request permanent deletion of your account and all associated data. Contact us at the email below or use the delete account option in Profile settings.</p></div>
+    <div class="card"><div class="card-title">✦ Portability</div><p>Request an export of your data in a machine-readable format.</p></div>
+    <div class="card"><div class="card-title">✦ Opt-out of Notifications</div><p>Disable push notifications at any time through your device's notification settings or within the app.</p></div>
+
+    <h3>California Residents (CCPA)</h3>
+    <p>California residents have additional rights including the right to know what personal information is collected, the right to opt out of sale (we do not sell personal data), and the right to non-discrimination for exercising privacy rights.</p>
+
+    <h3>EU/EEA Residents (GDPR)</h3>
+    <p>If you are located in the EU or EEA, you have the right to lodge a complaint with your local data protection authority. Our legal basis for processing is described in Section 2.</p>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <h2><span class="num">6</span> Children's Privacy</h2>
+    <div class="highlight">
+      <p>⚠️ CosmicNova is not intended for children under the age of 13 (or 16 in the EU/EEA). We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us immediately and we will delete it.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <h2><span class="num">7</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the app or via email. The "Last updated" date at the top of this page reflects the most recent revision.</p>
+    <p>Continued use of CosmicNova after changes become effective constitutes your acceptance of the revised policy.</p>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <h2><span class="num">8</span> Contact Us</h2>
+    <div class="contact-box">
+      <p>Questions about this Privacy Policy or your data?</p>
+      <a href="mailto:privacy@cosmicnova.app">privacy@cosmicnova.app</a>
+      <p style="margin-top:12px">We respond to all privacy inquiries within 72 hours.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 CosmicNova. All rights reserved.</p>
+    <p style="margin-top:6px">
+      <a href="privacy.html" style="color:var(--dim);text-decoration:none;margin:0 8px">Privacy Policy</a>
+      <a href="terms.html" style="color:var(--dim);text-decoration:none;margin:0 8px">Terms of Service</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+const sc=document.getElementById('stars')
+for(let i=0;i<80;i++){
+  const s=document.createElement('div')
+  s.className='star'
+  const sz=Math.random()*1.5+0.3
+  s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:${Math.random()*0.4+0.05}`
+  sc.appendChild(s)
+}
+</script>
+</body>
+</html>
