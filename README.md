@@ -1,2 +1,0 @@
-# cosmicnova
-CosmicNova Legal
