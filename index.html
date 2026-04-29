@@ -195,12 +195,13 @@ footer{border-top:1px solid var(--border);padding:32px 0;text-align:center}
     <div style="font-size:13px;color:var(--muted);max-width:400px;margin:0 auto;line-height:1.7">Explore an interactive 3D solar system with real-time planetary positions. Rotate, zoom, and watch 23 constellations come alive — all in your pocket.</div>
   </div>
 
-  <!-- Pricing -->
   <div style="margin-bottom:64px">
     <div class="section-label">✦ PRICING ✦</div>
     <div class="section-title">Simple & Transparent</div>
     <div class="section-sub">Start free. Upgrade when you're ready.</div>
-    <div class="pricing">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:700px;margin:0 auto">
+
+      <!-- Free -->
       <div class="plan plan-free">
         <div class="plan-type">FREE FOREVER</div>
         <div class="plan-price">$0</div>
@@ -211,11 +212,12 @@ footer{border-top:1px solid var(--border);padding:32px 0;text-align:center}
           <li>3D solar system</li>
         </ul>
       </div>
-      <div class="plan plan-premium">
-        <div class="plan-badge">✦ MOST POPULAR</div>
-        <div class="plan-type" style="color:#9966ff">PREMIUM</div>
-        <div class="plan-price" style="color:#c9b8ff">$3.33</div>
-        <div class="plan-per" style="color:#6644aa">/ month, billed $39.99/yr</div>
+
+      <!-- Monthly -->
+      <div class="plan" style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,184,255,0.25)">
+        <div class="plan-type" style="color:#9966ff">MONTHLY</div>
+        <div class="plan-price" style="color:#c9b8ff">$3.99</div>
+        <div class="plan-per" style="color:#6644aa">/ month</div>
         <ul class="plan-features">
           <li>All 18 analyses</li>
           <li>Full natal chart</li>
@@ -223,6 +225,22 @@ footer{border-top:1px solid var(--border);padding:32px 0;text-align:center}
           <li>Annual forecasts</li>
         </ul>
       </div>
+
+      <!-- Annual -->
+      <div class="plan plan-premium" style="position:relative">
+        <div class="plan-badge">✦ BEST VALUE</div>
+        <div class="plan-type" style="color:#9966ff">ANNUAL</div>
+        <div class="plan-price" style="color:#c9b8ff">$39.99</div>
+        <div class="plan-per" style="color:#6644aa">/ year · save ~17%</div>
+        <ul class="plan-features">
+          <li>All 18 analyses</li>
+          <li>Full natal chart</li>
+          <li>Unlimited archive</li>
+          <li>Annual forecasts</li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
